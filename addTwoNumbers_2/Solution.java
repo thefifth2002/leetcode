@@ -2,31 +2,28 @@ package addTwoNumbers_2;
 
 public class Solution {
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    ListNode s = new ListNode(0);
-    int l1Num = 0;
-    int l2Num = 0;
+    ListNode i = new ListNode(0);
+    ListNode result = i;
     int carrier = 0;
     while (l1 != null || l2 != null) {
       if (l1 != null) {
-        l1Num = l1.val;
+        carrier += l1.val;
+        l1 = l1.next;
       }
       if (l2 != null) {
-        l2Num = l2.val;
+        carrier += l2.val;
+        l2 = l2.next;
       }
-      int sum = l1Num + l2Num + carrier;
-      carrier = sum / 10;
-      sum = sum % 10;
-      s.val = sum;
-      s = s.next;
-      l1 = l1.next;
-      l2 = l2.next;
+      i.val = carrier % 10;
+      carrier = carrier / 10;
+      if (l1 != null || l2 != null) {
+        i.next = new ListNode(0);
+        i = i.next;
+      }
     }
-    return s;
-  }
-  
-  public static void main(String [] args) {
-    ListNode l1 = new ListNode(2);
-    
-    System.out.println(l1.val);
+    if (carrier > 0) {
+      i.next = new ListNode(carrier);
+    }
+    return result;
   }
 }
