@@ -28,7 +28,6 @@ public class Solution {
     if (s == null) {
       return 0;
     }
-
     HashMap<Character, Integer> map = new HashMap<Character, Integer>();
     int max = 0;
     int start = 0;
