@@ -29,7 +29,7 @@ public class Solution {
   }
 
   public static void main (String [] args) {
-    String s = "bbbbc";
+    String s = "bbcdbbccc";
     String res = longestPalindrome(s);
     System.out.println(res);
   }
