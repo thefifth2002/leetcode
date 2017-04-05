@@ -1,4 +1,4 @@
-package LongestPalindromicSubstring;
+package LongestPalindromicSubstring_5;
 
 public class Solution {
   static int low = 0;
