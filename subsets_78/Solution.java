@@ -1,4 +1,4 @@
-package subset_78;
+package subsets_78;
 
 import java.util.ArrayList;
 import java.util.List;
