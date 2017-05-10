@@ -9,7 +9,7 @@ public class Solution {
     backtrack(list, new ArrayList<>(), nums, 0);
     return list;
   }
-  private void backtrack(List<List<Integer>> list, List<Integer>sub, int[]nums,
+  private void backtrack(List<List<Integer>> list, List<Integer> sub, int[]nums,
       int start) {
     list.add(new ArrayList<>(sub));
     for (int i = start; i < nums.length; i++) {
