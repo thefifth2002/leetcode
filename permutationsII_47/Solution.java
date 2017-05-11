@@ -21,11 +21,14 @@ public class Solution {
         if (used[i] || i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
           continue;
         }
+        System.out.println("i = " + i);
         used[i] = true;
         list.add(nums[i]);
         backtrack(lists, list, nums, used);
         used[i] = false;
+        System.out.println(list.toString());
         list.remove(list.size() - 1);
+        System.out.println("list size = " + list.size());
       }
     }
   }
@@ -34,6 +37,6 @@ public class Solution {
     int[] nums = {1, 2, 3};
     int[] nums1 = {1, 1, 2};
     int[] nums2 = {3, 3, 0, 3};
-    System.out.println(sol.permuteUnique(nums2));
+    System.out.println(sol.permuteUnique(nums1));
   }
 }
