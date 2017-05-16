@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Solution {
   public int missingNumber(int[] nums) {
+    // linear search, too slow
     Arrays.sort(nums);
     if (nums[0] != 0) {
       return nums[0] - 1;
@@ -13,6 +14,20 @@ public class Solution {
       i++;
     }
     return nums[i] + 1;
+  }
+  public int missingNumber2(int[] nums) {
+    Arrays.sort(nums);
+    int lo = 0;
+    int hi = nums.length;
+    while (lo < hi) {
+      int mid = lo + (hi - lo) / 2;
+      if (nums[mid] > mid) {
+        hi = mid;
+      } else {
+        lo = mid + 1;
+      }
+    }
+    return lo;
   }
   public static void main(String[] args) {
     Solution sol = new Solution();
