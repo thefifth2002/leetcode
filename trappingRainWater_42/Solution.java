@@ -17,16 +17,12 @@ public class Solution {
       if (leftEdge <= rightEdge) {
         while (left < right && leftEdge >= height[left + 1]) {
           water = water + leftEdge - height[left + 1];
-          System.out.println("left = " + left);
-          System.out.println("water = " + water);
           left++;
         }
         left++;
       } else {
         while (left < right && height[right - 1] <= rightEdge) {
           water = water + rightEdge - height[right - 1];
-          System.out.println("right = " + right);
-          System.out.println("water = " + water);
           right--;
         }
         right--;
