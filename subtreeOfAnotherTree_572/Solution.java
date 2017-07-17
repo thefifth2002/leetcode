@@ -8,7 +8,7 @@ public class Solution {
   }
 
   private boolean traverse(TreeNode s, TreeNode t) {
-    return s != null & (equals(s, t) || equals(s.left, t) || equals(s.right, t));
+    return s != null && (equals(s, t) || traverse(s.left, t) || traverse(s.right, t));
   }
 
   private boolean equals(TreeNode s, TreeNode t) {
